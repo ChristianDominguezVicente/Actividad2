@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe75680798a4847ba4eecc57c645f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.5
+  velocidad: 0.2
   direccion: {x: -1, y: 0, z: 0}
   anchoImagen: 21.3
 --- !u!1 &484802139
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe75680798a4847ba4eecc57c645f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.5
+  velocidad: 0.4
   direccion: {x: -1, y: 0, z: 0}
   anchoImagen: 21.3
 --- !u!1 &528847946
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe75680798a4847ba4eecc57c645f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.5
+  velocidad: 0.3
   direccion: {x: -1, y: 0, z: 0}
   anchoImagen: 21.3
 --- !u!1 &643151447
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe75680798a4847ba4eecc57c645f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 0.5
+  velocidad: 0.1
   direccion: {x: -1, y: 0, z: 0}
   anchoImagen: 21.3
 --- !u!1 &1110289283
