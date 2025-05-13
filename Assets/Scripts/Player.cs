@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public class Player : MonoBehaviour
 {
@@ -18,15 +19,29 @@ public class Player : MonoBehaviour
     [SerializeField] private float radioDeteccion;
     [SerializeField] private LayerMask queEsSuelo;
 
+    [Header("PauseMenu")]
+    [SerializeField] private PauseMenu pauseMenu;
+
     private CharacterController controller;
     private Vector3 direccionMovimiento;
     private Vector3 direccionInput;
     private Vector3 velocidadVertical;
+    private bool gamePause = false;
+
+    public bool GamePause { get => gamePause; set => gamePause = value; }
 
     private void OnEnable()
     {
         inputManager.OnSaltar += Saltar;
         inputManager.OnMover += Mover;
+        inputManager.OnPause += Pause;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.OnSaltar -= Saltar;
+        inputManager.OnMover -= Mover;
+        inputManager.OnPause -= Pause;
     }
 
     // Start is called before the first frame update
@@ -58,6 +73,25 @@ public class Player : MonoBehaviour
         {
             velocidadVertical.y = Mathf.Sqrt(-2 * factorGravedad * alturaDeSalto);
         }
+    }
+
+    private void Pause()
+    {
+        if (gamePause)
+        {
+            pauseMenu.Resume();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            gamePause = false;
+        }
+        else
+        {
+            pauseMenu.Pause();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            gamePause = true;
+        }
+
     }
 
     private void AplicarMovimiento()
